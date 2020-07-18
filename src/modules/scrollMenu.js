@@ -6,12 +6,16 @@ const scrollMenu = () => {
   menu.addEventListener('click', e => {
     e.preventDefault();
 
+
     const sectionId = e.target.getAttribute('href');
 
-    document.querySelector(sectionId).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    try {
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } catch (error) {
+    }
   });
 
   serviceBlockLink.addEventListener('click', e => {
